@@ -1,13 +1,26 @@
 {
   "name": "untitled",
   "version": "0.0.0",
+  "main": "main.js",
+  "build": {
+    "appId": "de.ubweb.okapi",
+    "files": [
+      "dist/untitled/**/*",
+      "node_modules/**/*",
+      "package.json",
+      "main.js"
+    ]
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "electron": "electron .",
+    "electron-build": "ng build --prod && npm run electron .",
+    "electron-package-window": "electron-packager . — platform=win32"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +32,8 @@
     "@angular/platform-browser": "~8.2.9",
     "@angular/platform-browser-dynamic": "~8.2.9",
     "@angular/router": "~8.2.9",
+    "electron": "^6.0.11",
+    "electron-packager": "^14.0.6",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
